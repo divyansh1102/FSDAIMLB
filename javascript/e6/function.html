@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <style>
+        #aaa{
+        
+            height:300px;
+            border:5px solid red;
+            width:300px;
+           background-color: aqua;
+        }
+        
+        #adi{
+            height:300px;
+            border:5px solid red;
+            width:300px;
+           background-color: aqua;
+        }
+    
+    </style> 
+</head>
+<body id="adi">
+    <button onclick="red()">red</button>
+    <button onclick="green()">green</button>
+    <button onclick="blue()">blue</button>
+<script>
+    function red()
+    {
+        ducument.getElemenetById("adi").style.backgroundcolor="red";
+    }
+    function blue()
+    {
+        ducument.getElemenetById("adi").style.backgroundcolor="blue";
+    }
+    function green()
+    {
+        ducument.getElemenetById("adi").style.backgroundcolor="grenn";
+    }
+</script>
+    <div id="adi">
+        <button onclick="abes()">click</button>
+        <p id="aaa"> </p>
+    </div>
+
+    <script>
+        function abes(){
+             document.getElementById("aaa").innerHTML="<h1>hello"
+        }
+    </script> 
+
+     <script>
+        function ec(){
+     document.write("hello my world");
+    }
+     ec()
+    </script>
+    
+</body>
+</html>
