@@ -1,0 +1,39 @@
+.container{
+    /*background-color: aqua;*/
+    display : flex;
+    border: 10px solid rgb(255, 247, );
+   /* flex-direction: row-reverse; *//* flex-direction:column-reverse; */
+   flex-wrap: nowrap;
+   justify-content: space-evenly;
+    background-color: rgb(244, 229, 144);
+}
+.child1{
+ border: 1px solid red;
+    background-color: chartreuse;
+    height: 200px;
+    width: 200px;
+}
+.child2{
+     border: 1px solid rgb(0, 136, 255);
+    background-color: rgb(255, 0, 132);
+    width: 200px;
+    height: 200px;
+    order:4;
+
+}
+.child3{
+     border: 1px solid red;
+    background-color: rgb(0, 221, 255);
+    width: 200px;
+    height: 200px;
+}
+.child4{
+     border: 1px solid red;
+    background-color: rgb(255, 136, 0);
+    width: 200px;
+    height: 200px;
+}
+
+p:nth-child(1){
+    background-color: rgb(229, 177, 139);
+}

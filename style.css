@@ -1,0 +1,40 @@
+/*
+body{
+    background-color: rgb(209, 54, 201);
+
+}
+h2{
+    font-style: oblique;
+    background-color: blueviolet;
+    color: black;
+}
+
+*/
+
+div~p{
+    background-color: rgb(56, 157, 61);
+}
+/*p{
+    background-color: aqua;
+}*/
+p:hover{
+ background-color: rgb(231, 86, 127);
+ font-size:  xx-large;
+}
+p::before{
+    background-color: brown;
+    content :"huhjbjmnk"
+}
+p::after{
+content: "hsdhafkjlhfkjdsa";
+}
+p::selection{
+    background-color: blueviolet;
+    
+}
+p:nth-child(2){
+    background-color: rgb(86, 8, 69);
+}
+div p:nth-of-type(1){
+    background-color: beige;
+}
