@@ -1,29 +1,42 @@
 const http=require('http');
-const  PORT=40010;
-const server = http.createServer((req,res)=>{
-//     res.setHeader('content-type','text/html');
-// res.end("<h2 style-color:red>hello,welcome to node server</h2>");
-
-if(req.url=='/msg' && req.method=='GET'){
-    res.setHeader('content-type','text/html');
-    res.end("<h1>hello geez </h1>");
+const sum=require('./fetchData');
+const writeData=require('./usefsmodule')
+const PORT=4007;
+const server=http.createServer( async(req,res)=>{
+//     res.setHeader('Content-Type','text/html');
+// res.end("<h2 style=color:red>Hello, Welcome to Node Server</h2>");
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+     
+if(req.url=='/msg' && req.method=="GET"){
+    res.setHeader('Content-Type','text/html');
+    res.end("<h1>Welcome message from Node Server</h1>");
 }
 
-if(req.url=='/data' && req.method=='GET'){
-    res.setHeader('content-type','application/json');
-    res.end(JSON.stringify({message:"welcome to the data endpoint!"}));
+if(req.url=='/data' && req.method=="GET"){
+  
+res.setHeader('Content-Type','application/json');
+   const sumData=await sum();
+     res.end(JSON.stringify({msg:sumData}))
+   
 }
-if(req.url=='/data' && req.method=="POST"){
-    res.setHeader('content-type','application/json');
-    res.end(JSON.stringify({message:"welcome to the data endpoint!"}));
+if(req.url=='/writeData' && req.method=="GET"){
+  
+res.setHeader('Content-Type','application/json');
+   const sumData=writeData();
+     res.end(JSON.stringify({msg:sumData}))
+   
 }
-if(req.url === '/delete' && req.method === 'GET'){
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ message: "Data deleted successfully!" }));
-}
+// if(req.url=='/data' && req.method=="POST"){
+//    res.setHeader('Content-Type','application/json');
+//     res.end(JSON.stringify({msg:"Post method for data insertion"})); 
+// }
+
 
 
 })
-server.listen(PORT,() => {
-    console.log('service is available at $(PORT)')
+
+server.listen(PORT,()=>{
+    console.log(`Service is available at ${PORT}`)
 })
